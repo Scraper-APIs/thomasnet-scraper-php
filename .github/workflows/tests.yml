@@ -53,7 +53,7 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-progress
 
       - name: Check code style
-        run: composer cs
+        run: composer cs -- -v
 
   static-analysis:
     runs-on: ubuntu-latest

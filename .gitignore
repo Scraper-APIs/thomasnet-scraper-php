@@ -2,4 +2,4 @@
 composer.lock
 .phpunit.cache/
 .phpstan.cache/
-.php-cs-fixer.cache
+.pint.cache

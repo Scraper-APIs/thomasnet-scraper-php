@@ -9,7 +9,7 @@
     },
     "require-dev": {
         "pestphp/pest": "^4.0",
-        "friendsofphp/php-cs-fixer": "^3.0",
+        "laravel/pint": "^1.0",
         "phpstan/phpstan": "^1.0"
     },
     "autoload": {
@@ -24,8 +24,8 @@
     },
     "scripts": {
         "test": "pest",
-        "cs": "php-cs-fixer fix --dry-run --diff",
-        "cs:fix": "php-cs-fixer fix",
+        "cs": "pint --test",
+        "cs:fix": "pint",
         "analyse": "phpstan analyse"
     },
     "config": {
