@@ -1,0 +1,34 @@
+{
+    "name": "scraper-apis/thomasnet-scraper",
+    "description": "PHP Scraper library for fetching supplier data from the ThomasNet Suppliers using an Apify actor",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThomasNet\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ThomasNet\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "php-cs-fixer fix",
+        "analyse": "phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
