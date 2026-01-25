@@ -10,7 +10,7 @@ composer require your-vendor/thomasnet-php
 
 ## Requirements
 
-- PHP 8.1+
+- PHP 8.3+
 - Apify API token ([get one here](https://console.apify.com/account/integrations))
 
 ## Quick Start
