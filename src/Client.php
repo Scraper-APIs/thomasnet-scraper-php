@@ -14,6 +14,7 @@ use ThomasNetScraper\Exception\RateLimitException;
 final class Client
 {
     private HttpClient $http;
+
     private Config $config;
 
     public function __construct(string $apiToken, ?Config $config = null)
@@ -23,7 +24,7 @@ final class Client
             'base_uri' => $this->config->baseUrl,
             'timeout' => $this->config->timeout,
             'headers' => [
-                'Authorization' => 'Bearer ' . $this->config->apiToken,
+                'Authorization' => 'Bearer '.$this->config->apiToken,
                 'Content-Type' => 'application/json',
             ],
         ]);
@@ -33,6 +34,7 @@ final class Client
      * Search for suppliers.
      *
      * @return Supplier[]
+     *
      * @throws ApiException
      * @throws RateLimitException
      * @throws InvalidQueryException
@@ -68,7 +70,7 @@ final class Client
 
             $result = json_decode($response->getBody()->getContents(), true);
 
-            if (!isset($result['data']['defaultDatasetId'])) {
+            if (! isset($result['data']['defaultDatasetId'])) {
                 throw new ApiException('Invalid API response: missing dataset ID');
             }
 
@@ -80,6 +82,7 @@ final class Client
 
     /**
      * @return Supplier[]
+     *
      * @throws ApiException
      */
     private function fetchDataset(string $datasetId): array
@@ -89,11 +92,11 @@ final class Client
             $items = json_decode($response->getBody()->getContents(), true);
 
             return array_map(
-                static fn(array $item) => Supplier::fromArray($item),
+                static fn (array $item) => Supplier::fromArray($item),
                 $items
             );
         } catch (GuzzleException $e) {
-            throw new ApiException('Failed to fetch dataset: ' . $e->getMessage(), 0, $e);
+            throw new ApiException('Failed to fetch dataset: '.$e->getMessage(), 0, $e);
         }
     }
 
@@ -114,6 +117,6 @@ final class Client
             }
         }
 
-        throw new ApiException('API request failed: ' . $e->getMessage(), 0, $e);
+        throw new ApiException('API request failed: '.$e->getMessage(), 0, $e);
     }
 }

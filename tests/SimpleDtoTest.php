@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use ThomasNetScraper\DTO\Brand;
 use ThomasNetScraper\DTO\Person;
+use ThomasNetScraper\DTO\Product;
 use ThomasNetScraper\DTO\SocialLink;
 use ThomasNetScraper\DTO\Video;
-use ThomasNetScraper\DTO\Product;
 
 describe('Brand', function () {
     it('creates brand from array', function () {

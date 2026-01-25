@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use ThomasNetScraper\SearchMode;
 use ThomasNetScraper\Area;
+use ThomasNetScraper\SearchMode;
 
 it('has correct search mode values', function () {
     expect(SearchMode::All->value)->toBe('all')

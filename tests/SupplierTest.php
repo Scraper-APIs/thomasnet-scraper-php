@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use ThomasNetScraper\DTO\Supplier;
 use ThomasNetScraper\DTO\Address;
+use ThomasNetScraper\DTO\Brand;
 use ThomasNetScraper\DTO\Certification;
 use ThomasNetScraper\DTO\Heading;
-use ThomasNetScraper\DTO\Brand;
 use ThomasNetScraper\DTO\NewsArticle;
+use ThomasNetScraper\DTO\Supplier;
 use ThomasNetScraper\DTO\Whitepaper;
 
 it('creates supplier from array', function () {

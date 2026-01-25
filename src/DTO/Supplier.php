@@ -9,17 +9,17 @@ use DateTimeImmutable;
 final readonly class Supplier
 {
     /**
-     * @param Heading[] $headings
-     * @param Certification[] $certifications
-     * @param CertificationTotal[] $certificationTotals
-     * @param Product[] $products
-     * @param Person[] $personnel
-     * @param Brand[] $brands
-     * @param SocialLink[] $social
-     * @param Video[] $videos
-     * @param NewsArticle[] $news
-     * @param Whitepaper[] $whitepapers
-     * @param string[] $otherActivities
+     * @param  Heading[]  $headings
+     * @param  Certification[]  $certifications
+     * @param  CertificationTotal[]  $certificationTotals
+     * @param  Product[]  $products
+     * @param  Person[]  $personnel
+     * @param  Brand[]  $brands
+     * @param  SocialLink[]  $social
+     * @param  Video[]  $videos
+     * @param  NewsArticle[]  $news
+     * @param  Whitepaper[]  $whitepapers
+     * @param  string[]  $otherActivities
      */
     public function __construct(
         public string $tgramsId,
@@ -75,43 +75,43 @@ final readonly class Supplier
             logoTitle: $data['logoTitle'] ?? null,
             address: Address::fromArray($data['address'] ?? []),
             headings: array_map(
-                static fn(array $h) => Heading::fromArray($h),
+                static fn (array $h) => Heading::fromArray($h),
                 $data['headings'] ?? []
             ),
             certifications: array_map(
-                static fn(array $c) => Certification::fromArray($c),
+                static fn (array $c) => Certification::fromArray($c),
                 $data['certifications'] ?? []
             ),
             certificationTotals: array_map(
-                static fn(array $ct) => CertificationTotal::fromArray($ct),
+                static fn (array $ct) => CertificationTotal::fromArray($ct),
                 $data['certificationTotals'] ?? []
             ),
             products: array_map(
-                static fn(array $p) => Product::fromArray($p),
+                static fn (array $p) => Product::fromArray($p),
                 $data['products'] ?? []
             ),
             personnel: array_map(
-                static fn(array $p) => Person::fromArray($p),
+                static fn (array $p) => Person::fromArray($p),
                 $data['personnel'] ?? []
             ),
             brands: array_map(
-                static fn(array $b) => Brand::fromArray($b),
+                static fn (array $b) => Brand::fromArray($b),
                 $data['brands'] ?? []
             ),
             social: array_map(
-                static fn(array $s) => SocialLink::fromArray($s),
+                static fn (array $s) => SocialLink::fromArray($s),
                 $data['social'] ?? []
             ),
             videos: array_map(
-                static fn(array $v) => Video::fromArray($v),
+                static fn (array $v) => Video::fromArray($v),
                 $data['videos'] ?? []
             ),
             news: array_map(
-                static fn(array $n) => NewsArticle::fromArray($n),
+                static fn (array $n) => NewsArticle::fromArray($n),
                 $data['news'] ?? []
             ),
             whitepapers: array_map(
-                static fn(array $w) => Whitepaper::fromArray($w),
+                static fn (array $w) => Whitepaper::fromArray($w),
                 $data['whitepapers'] ?? []
             ),
             otherActivities: $data['otherActivities'] ?? [],
