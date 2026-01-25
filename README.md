@@ -16,8 +16,8 @@ composer require your-vendor/thomasnet-php
 ## Quick Start
 
 ```php
-use ThomasNet\Client;
-use ThomasNet\SearchMode;
+use ThomasNetScraper\Client;
+use ThomasNetScraper\SearchMode;
 
 $client = new Client('YOUR_APIFY_TOKEN');
 
@@ -46,7 +46,7 @@ $suppliers = $client->search('Siemens', SearchMode::Name, maxResults: 50);
 ### Regional Search
 
 ```php
-use ThomasNet\Area;
+use ThomasNetScraper\Area;
 
 $suppliers = $client->search(
     query: 'precision machining',
@@ -205,9 +205,9 @@ See `Area` enum for the complete list of 50+ regions.
 ## Error Handling
 
 ```php
-use ThomasNet\Exception\ApiException;
-use ThomasNet\Exception\RateLimitException;
-use ThomasNet\Exception\InvalidQueryException;
+use ThomasNetScraper\Exception\ApiException;
+use ThomasNetScraper\Exception\RateLimitException;
+use ThomasNetScraper\Exception\InvalidQueryException;
 
 try {
     $suppliers = $client->search('valve');

@@ -14,12 +14,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ThomasNet\\": "src/"
+            "ThomasNetScraper\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ThomasNet\\Tests\\": "tests/"
+            "ThomasNetScraper\\Tests\\": "tests/"
         }
     },
     "scripts": {
