@@ -5,7 +5,7 @@ A PHP library for fetching supplier data from the [ThomasNet Suppliers](https://
 ## Installation
 
 ```bash
-composer require your-vendor/thomasnet-php
+composer require scraper-apis/thomasnet-scraper
 ```
 
 ## Requirements
