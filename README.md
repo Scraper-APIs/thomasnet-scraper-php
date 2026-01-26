@@ -1,5 +1,9 @@
 # [ThomasNet PHP Scraper](https://github.com/Scraper-APIs/thomasnet-scraper-php)
 
+[![Tests](https://github.com/Scraper-APIs/thomasnet-scraper-php/actions/workflows/tests.yml/badge.svg)](https://github.com/Scraper-APIs/thomasnet-scraper-php/actions/workflows/tests.yml)
+[![PHP Version](https://img.shields.io/badge/php-8.3%2B-blue)](https://www.php.net/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 A PHP library for fetching supplier data from the [ThomasNet Suppliers](https://thomasnet.com) Database using the [Apify ThomasNet Supplier actor](https://apify.com/zen-studio/thomasnet-suppliers-scraper). Returns fully typed DTOs for easy integration into your application.
 
 ## Installation
