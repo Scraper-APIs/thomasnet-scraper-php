@@ -68,13 +68,17 @@ final class Client
                 ]
             );
 
+            /** @var array<string, mixed> $result */
             $result = json_decode($response->getBody()->getContents(), true);
 
             if (! isset($result['data']['defaultDatasetId'])) {
                 throw new ApiException('Invalid API response: missing dataset ID');
             }
 
-            return $this->fetchDataset($result['data']['defaultDatasetId']);
+            /** @var string $datasetId */
+            $datasetId = $result['data']['defaultDatasetId'];
+
+            return $this->fetchDataset($datasetId);
         } catch (GuzzleException $e) {
             $this->handleGuzzleException($e);
         }
@@ -89,10 +93,11 @@ final class Client
     {
         try {
             $response = $this->http->get("/datasets/{$datasetId}/items");
+            /** @var array<int, array<string, mixed>> $items */
             $items = json_decode($response->getBody()->getContents(), true);
 
             return array_map(
-                static fn (array $item) => Supplier::fromArray($item),
+                static fn (array $item): Supplier => Supplier::fromArray($item),
                 $items
             );
         } catch (GuzzleException $e) {

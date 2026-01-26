@@ -11,6 +11,9 @@ final readonly class CertificationTotal
         public int $count,
     ) {}
 
+    /**
+     * @param  array<string, mixed>  $data
+     */
     public static function fromArray(array $data): self
     {
         return new self(
