@@ -108,19 +108,19 @@ foreach ($suppliers as $supplier) {
 // Filter for ISO 9001 certified suppliers
 $iso9001Suppliers = array_filter(
     $suppliers,
-    fn($s) => $s->hasCertification('ISO 9001')
+    fn ($s) => $s->hasCertification('ISO 9001')
 );
 
 // Filter by state
 $texasSuppliers = array_filter(
     $suppliers,
-    fn($s) => $s->address->state === 'TX'
+    fn ($s) => $s->address->state === 'TX'
 );
 
 // Filter by employee count
 $largeSuppliers = array_filter(
     $suppliers,
-    fn($s) => $s->numberEmployees === '1000+'
+    fn ($s) => $s->numberEmployees === '1000+'
 );
 ```
 
